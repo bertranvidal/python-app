@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor de Divisas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f766e, #134e4a);
+            font-family: 'Inter', sans-serif;
         }
+
         .navbar-custom {
             position: fixed;
             top: 0;
@@ -20,34 +24,87 @@
             padding: 14px 30px;
             font-family: 'Segoe UI', sans-serif;
         }
+
         .navbar-custom .navbar-brand {
             font-size: 1.3rem;
             font-weight: 600;
             color: white;
             text-decoration: none;
         }
+
         .navbar-custom .nav-link {
             color: #e2e8f0;
             text-decoration: none;
             margin-left: 24px;
         }
+
         .navbar-custom .nav-link:hover {
             color: white;
         }
+
         .converter-card {
+            width: 400px;
+            max-width: calc(100% - 32px);
+            border: none;
             border-radius: 20px;
             backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.97);
         }
+
+        .converter-card h2 {
+            color: #134e4a;
+            font-weight: 700;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: #0d9488;
+            box-shadow: 0 0 0 0.2rem rgba(13, 148, 136, 0.15);
+        }
+
+        .btn-primary {
+            background-color: #0d9488;
+            border-color: #0d9488;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background-color: #0f766e;
+            border-color: #0f766e;
+        }
+
         .result-box {
             font-size: 1.5rem;
-            font-weight: bold;
-            color: #198754;
+            font-weight: 700;
+            color: #0f766e;
+        }
+
+        @media (max-width: 576px) {
+            .navbar-custom {
+                padding: 12px 16px;
+            }
+
+            .navbar-custom .navbar-brand {
+                font-size: 1rem;
+            }
+
+            .navbar-custom .nav-link {
+                margin-left: 12px;
+                font-size: 0.85rem;
+            }
+
+            .converter-card {
+                padding: 20px !important;
+            }
+
+            .converter-card h2 {
+                font-size: 1.4rem;
+            }
         }
     </style>
 </head>
 
-<body class="d-flex justify-content-center align-items-center vh-100">
+<body class="d-flex justify-content-center align-items-center">
 
     <nav class="navbar-custom d-flex justify-content-between align-items-center">
         <a class="navbar-brand" href="/">💱 Currency Converter</a>
@@ -58,7 +115,7 @@
         </div>
     </nav>
 
-    <div id="converter" class="card shadow-lg p-4 converter-card" style="width: 400px;">
+    <div id="converter" class="card shadow-lg p-4 converter-card">
         <h2 class="text-center mb-4">💱 Conversor de Divisas</h2>
 
         <form method="post">
